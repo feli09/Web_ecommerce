@@ -1,7 +1,6 @@
 /*!
  * mincart
  * The Mini Cart is a great way to improve your PayPal shopping cart integration.
- *
  * @version 3.0.6
  * @url http://www.mincartjs.com/
  */
@@ -1912,10 +1911,10 @@ var defaults = module.exports = {
     styles: '',
 
     strings: {
-        button: 'Check Out',
+        button: 'Verificar carrito',
         subtotal: 'Subtotal:',
-        discount: 'Discount:',
-        empty: 'Your shopping cart is empty'
+        discount: 'Descontar:',
+        empty: 'EL carrito está vacío'
     }
 
 };
@@ -2108,7 +2107,7 @@ Product.prototype.set = function set(key, value) {
 
 
 /**
- * Parse and return the options for this product.
+ * Analiza y devuelve el descuento de este producto.
  *
  * @return {object}
  */
@@ -2150,8 +2149,7 @@ Product.prototype.options = function options() {
 
 
 /**
- * Parse and return the discount for this product.
- *
+ * Analiza y devuelve el descuento de este producto.
  * @param {object} config (Optional) Currency formatting options.
  * @return {number|string}
  */
@@ -2183,7 +2181,7 @@ Product.prototype.discount = function discount(config) {
 
 
 /**
- * Parse and return the total without discounts for this product.
+ * Analice y devuelva el total de este producto.
  *
  * @param {object} config (Optional) Currency formatting options.
  * @return {number|string}
@@ -2207,7 +2205,7 @@ Product.prototype.amount = function amount(config) {
 
 
 /**
- * Parse and return the total for this product.
+ * Analice y devuelva el total de este producto.
  *
  * @param {object} config (Optional) Currency formatting options.
  * @return {number|string}
@@ -2227,7 +2225,7 @@ Product.prototype.total = function total(config) {
 
 
 /**
- * Determine if this product has the same data as another.
+ * Determina si este producto tiene los mismos datos que otro.
  *
  * @param {object|Product} data Other product.
  * @return {boolean}
@@ -2263,7 +2261,7 @@ Product.prototype.isEqual = function isEqual(data) {
 
 
 /**
- * Determine if this product is valid.
+ * Determina si este producto es válido.
  *
  * @return {boolean}
  */
@@ -2273,7 +2271,7 @@ Product.prototype.isValid = function isValid() {
 
 
 /**
- * Destroys this product. Fires a "destroy" event.
+ * Destruye este producto. Activa un evento de "destrucción".
  */
 Product.prototype.destroy = function destroy() {
     this._data = [];
@@ -2392,7 +2390,7 @@ var currencies = {
     MYR: { before: 'RM' },
     NOK: { before: 'kr' },
     NZD: { before: '$', code: true },
-    PEN: { before: 'S/' },
+    PEN: { before: 'S/', code: true },
     PHP: { before: 'Php' },
     PLN: { before: 'z' },
     QAR: { before: '\ufdfc' },
@@ -2416,7 +2414,7 @@ var currencies = {
 
 
 module.exports = function currency(amount, config) {
-    var code = config && config.currency || 'USD',
+    var code = config && config.currency || 'PEN',
         value = currencies[code],
         before = value.before || '',
         after = value.after || '',
@@ -2746,7 +2744,7 @@ module.exports = function template(str, data) {
 };
 
 
-// Workaround for IE 8's lack of support
+// Solución alternativa para la falta de soporte de IE 8
 if (!String.prototype.trim) {
     String.prototype.trim = function () {
         return this.replace(/^\s+|\s+$/g, '');
@@ -2768,7 +2766,7 @@ var config = require('./config'),
 
 
 /**
- * Creates a view model.
+ * Crea un modelo de vista.
  *
  * @constructor
  * @param {object} model
@@ -2796,7 +2794,7 @@ function View(model) {
 
 
 /**
- * Tells the view to redraw
+ * Le dice a la vista que vuelva a dibujar
  */
 View.prototype.redraw = function redraw() {
     events.remove(this.el.querySelector('form'), 'submit', this.model.cart.googles_checkout, this.model.cart);
@@ -2806,7 +2804,7 @@ View.prototype.redraw = function redraw() {
 
 
 /**
- * Tells the view to show
+ * Le dice a la vista que se muestre
  */
 View.prototype.show = function show() {
     if (!this.isShowing) {
@@ -2817,7 +2815,7 @@ View.prototype.show = function show() {
 
 
 /**
- * Tells the view to hide
+ * Le dice a la vista que se esconda
  */
 View.prototype.hide = function hide() {
     if (this.isShowing) {
@@ -2828,7 +2826,7 @@ View.prototype.hide = function hide() {
 
 
 /**
- * Toggles the visibility of the view
+ * Alterna la visibilidad de la vista
  */
 View.prototype.toggle = function toggle() {
     this[this.isShowing ? 'hide' : 'show']();
@@ -2836,7 +2834,7 @@ View.prototype.toggle = function toggle() {
 
 
 /**
- * Binds cart submit events to a form.
+ * Vincula eventos de envío de carrito a un formulario.
  *
  * @param {HTMLElement} form
  * @return {boolean}
@@ -2844,12 +2842,12 @@ View.prototype.toggle = function toggle() {
 View.prototype.bind = function bind(form) {
     var that = this;
 
-    // Don't bind forms without a cmd value
+    // No enlace formularios sin un valor cmd
     if (!constants.COMMANDS[form.cmd.value]) {
         return false;
     }
 
-    // Prevent re-binding forms
+    // Evitar volver a encuadernar formularios
     if (form.hassbmincart) {
         return false;
     } else {
@@ -2873,7 +2871,7 @@ View.prototype.bind = function bind(form) {
 
 
 /**
- * Adds an item to the view.
+ * Agrega un elemento a la vista.
  *
  * @param {number} idx
  * @param {object} data
@@ -2888,7 +2886,7 @@ View.prototype.addItem = function addItem(idx, data) {
 
 
 /**
- * Changes an item in the view.
+ * Cambia un elemento en la vista.
  *
  * @param {number} idx
  * @param {object} data
@@ -2903,8 +2901,7 @@ View.prototype.changeItem = function changeItem(idx, data) {
 
 
 /**
- * Removes an item from the view.
- *
+ * Elimina un elemento de la vista.
  * @param {number} idx
  */
 View.prototype.removeItem = function removeItem(idx) {
@@ -2932,16 +2929,16 @@ module.exports = viewevents = {
             className = target.className;
 
         if (this.isShowing) {
-            // Cart close button
+            // Botón de cierre del carrito
             if (className === constants.CLOSER_CLASS) {
                 this.hide();
-            // Product remove button
+            // Botón de eliminación de producto
             } else if (className === constants.REMOVE_CLASS) {
                 this.model.cart.remove(target.getAttribute(constants.DATA_IDX));
-            // Product quantity input
+            // Entrada de cantidad de producto
             } else if (className === constants.QUANTITY_CLASS) {
                 target[target.setSelectionRange ? 'setSelectionRange' : 'select'](0, 999);
-            // Outside the cart
+            // Fuera del carro
             } else if (!(/input|button|select|option/i.test(target.tagName))) {
                 while (target.nodeType === 1) {
                     if (target === this.el) {
@@ -2985,7 +2982,7 @@ module.exports = viewevents = {
         if (/interactive|complete/.test(document.readyState)) {
             var forms, form, i, len;
 
-            // Bind to page's forms
+            // Enlazar a los formularios de la página
             forms = document.getElementsByTagName('form');
 
             for (i = 0, len = forms.length; i < len; i++) {
@@ -2996,10 +2993,10 @@ module.exports = viewevents = {
                 }
             }
 
-            // Do the initial render when the buttons are ready
+            // Haz el render inicial cuando los botones estén listos
             this.redraw();
 
-            // Only run this once
+            // Solo ejecuta esto una vez
             events.remove(document, 'readystatechange', viewevents.readystatechange);
         }
     },
