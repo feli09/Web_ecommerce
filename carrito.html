@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <title>Ecommerce</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-
-<link href="css/cssgeneral.css" rel='stylesheet' type='text/css' />
+    <head>
+        <title>Ecommerce - Carrito</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+        <script>
+            addEventListener("load", function () {
+                setTimeout(hideURLbar, 0);
+            }, false);
+    
+            function hideURLbar() {
+                window.scrollTo(0, 1);
+            }
+        </script>
+        <link href="css/cssgeneral.css" rel='stylesheet' type='text/css' />
         <link rel="stylesheet" href="css/shop.css" type="text/css" />
         <link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
         <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link rel="stylesheet" type="text/css" href="css/carrito.css">
+        <link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
         <link href="css/fontawesome-all.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
             rel="stylesheet">
-</head>
+    </head>
 
 <body>
-    <!-- header -->
-    <div class="banner-top container-fluid" id="home">
+
+     <!-- header -->
+     <div class="banner-top container-fluid" id="home">
 		<header>
 			<div class="row">
 
@@ -67,14 +77,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav nav-mega mx-auto">
                         <!--Inicio-->
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a class="nav-link ml-lg-0" href="index.html">Inicio
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 
                        <!--Ver Todo-->
-						<li class="nav-item">
+						<li class="nav-item active">
 							<a class="nav-link" href="shop.html">Ver Todo</a>
 						</li>
 
@@ -102,150 +112,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //header -->
 
 
-    <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
-		<div class="container-fluid">
-			<div class="inner-sec-shop px-lg-4 px-3">	
-				<!--Banner Principal-->
-				<div class="row">
-					<div class="col-md-12 middle-slider my-4">
-						<div class="middle-text-info ">
 
-							<h3 class="tittle two text-center my-lg-4 mt-3">Coleccion Verano</h3>
-							<div class="simply-countdown-custom" id="simply-countdown-custom"></div>
+    <!--checkout-->
+	<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+		<div class="container">
+			<div class="inner-sec-shop px-lg-1 px-3">
+				<h4>Su carrito de compras tiene:
+					<span>1 Producto</span>
+				</h4>	
+				
+				<div class="checkout-right">
+					<table class="timetable_sub">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>Producto</th>
+								<th>Nombre</th>
+								<th>Precio</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="rem1">
+								<td class="invert">1</td>
+								<td class="invert">
+									<a href="single.html">
+										<img src="images/s1.jpg" alt=" " class="img-responsive">
+									</a>
+								</td>
+								
+								<td class="invert">Irayz Butterfly </td>
 
-						</div>
+								<td class="invert">S/ 281.00</td>
+								
+							</tr>
+
+						</tbody>
+					</table>
+				</div>
+
+				<div class="checkout-left row">	
+					<div class="col-md-4 checkout-left-basket">
+						<ul>
+							<li>Resumen de tu Orden
+							</li>
+							<li>Sub Total								
+								<span>S/ 325.00 </span>
+							</li>
+							<li>Delivery
+								<span>S/ 325.00 </span>
+							</li>
+							<li>Total
+								<span>S/ 986.00</span>
+							</li>
+						</ul>
+						<h4>Ya pague</h4>
 					</div>
 				</div>
-				<!--//Banner Principal-->
-
-                <!-- Grid imagenes -->
-				<div class="row galsses-grids pt-lg-5 pt-3 mt-6">
-                    <!--GR1-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner4.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Imagen
-									<span>1</span>
-								</h3>
-								<p> Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-                    <!--GR2-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner1.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Imagen
-									<span>2</span>
-								</h3>
-								<p>Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-                    <!--GR3-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner1.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Imagen
-									<span>3</span>
-								</h3>
-								<p>Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-                <div class="row galsses-grids pt-lg-5 pt-3">
-                    <!--GR1-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner4.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Editor's
-									<span>Pick</span>
-								</h3>
-								<p> Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-                    <!--GR2-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner1.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Editor's
-									<span>Pick</span>
-								</h3>
-								<p>Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-                    <!--GR3-->
-					<div class="col-lg-4 galsses-grid-left">
-						<figure class="effect-lexi">
-							<img src="images/banner1.jpg" alt="" class="img-fluid">
-							<figcaption>
-								<h3>Editor's
-									<span>Pick</span>
-								</h3>
-								<p>Express your style now.</p>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
-				<!-- //Grid imagenes -->
-
-
-				<!-- /clients-sec -->
-				<!--<div class="testimonials p-lg-5 p-3 mt-4">
-					<div class="row last-section">
-						<div class="col-lg-3 footer-top-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-gift"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Genuine Product</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-shield-alt"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Secure Products</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-dollar-sign"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Cash on Delivery</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
-							</div>
-						</div>
-						<div class="col-lg-3 footer-top-grid-sec">
-							<div class="mail-grid-icon text-center">
-								<i class="fas fa-truck"></i>
-							</div>
-							<div class="mail-grid-text-info">
-								<h3>Easy Delivery</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
-							</div>
-						</div>
-					</div>
-				</div> -->
-				<!-- //clients-sec -->
 			</div>
 		</div>
 	</section>
-	<!-- about -->
+	<!--//checkout-->
 
-    <!--Pie de pagina -->
+
+     <!--Pie de pagina -->
 	<footer class="py-lg-5 py-3">
 		<div class="container-fluid px-lg-5 px-3">
 			<div class="row footer-top">
@@ -329,44 +258,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<!-- jQuer -->
 
-	<!-- Modal descuento -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body text-center p-5 mx-auto mw-100">
-					<h6>Únase a nuestro boletín y obtenga</h6>
-					<h3>50% de descuento para su primera compra</h3>
-					<div class="login newsletter">
-						<form action="#" method="post">
-							<div class="form-group">
-								<label class="mb-2">Correo Electronico</label>
-								<input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="" required="">
-							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">Obtener Descuento</button>
-						</form>
-						<p class="text-center">
-							<a href="#">No, gracias, quiero pagar el precio completo</a>
-						</p>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<script>
-		$(document).ready(function () {
-			$("#myModal").modal();
-		});
-	</script>
-	<!-- // Modal descuento -->
-
-	
 	<!-- CarritoCompras -js -->
 	<script src="js/minicart.js"></script>
 	<script>
@@ -434,6 +325,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--// scrolling -->
 
+    <!-- easy-responsive-tabs -->
+	<script src="js/easy-responsive-tabs.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+    <!-- easy-responsive-tabs -->
+
+    <!--quantity-->
+	<script>
+		$('.value-plus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) + 1;
+			divUpd.text(newVal);
+		});
+
+		$('.value-minus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) - 1;
+			if (newVal >= 1) divUpd.text(newVal);
+		});
+	</script>
+	<!--quantity-->
+
+	<!--close-->
+	<script>
+		$(document).ready(function (c) {
+			$('.close1').on('click', function (c) {
+				$('.rem1').fadeOut('slow', function (c) {
+					$('.rem1').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close2').on('click', function (c) {
+				$('.rem2').fadeOut('slow', function (c) {
+					$('.rem2').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close3').on('click', function (c) {
+				$('.rem3').fadeOut('slow', function (c) {
+					$('.rem3').remove();
+				});
+			});
+		});
+	</script>
+	<!--//close-->
+
+
 	<script src="js/jsgeneral.js"></script>
+<!--js para animaciones y vistas -->
+
 </body>
 </html>
